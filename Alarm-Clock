@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+void test_case() {
+	ll a, b, c, d;
+	cin >> a >> b >> c >> d;
+	if(b >= a) {
+		cout << b << "\n";
+		return;
+	} 
+	else if(d >= c) {
+	    cout << "-1" << "\n";
+	    return;
+	}else {
+		 
+		   ll ans;
+		   
+		   int sub_left = a-b;
+		   int rep;
+		   int ds = c - d;
+		  if(sub_left % ds ^ 0) {
+		  	rep = sub_left / ds;
+		  	rep++;
+
+		    ans = b + rep * c;
+		    cout << ans << "\n";
+		    return;
+		  } 
+
+          
+         rep = sub_left / ds;
+
+		    
+		    ans = b + rep * c;
+		    cout << ans << "\n";
+      }
+	
+}
+
+int main() {
+  int tt;
+  cin >> tt;
+  while(tt--) {
+  	test_case();
+  }
+  return 0;
+}
