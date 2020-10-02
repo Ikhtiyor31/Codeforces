@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+typedef long long ll;
+const int MOD = 1e9 + 7;
+using namespace std;
+ll maxn = 1e5 + 5;
+ 
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    int n, x;
+    cin >> n;
+    unordered_map<ll, int> umap;
+    umap.reserve(1<<19);
+    umap[0] = 1;
+    ll sum = 0;
+    ll ans = 0;
+    for(int i = 0; i < n; i++) { 
+    	int m;
+    	cin >> m;
+    	sum = ((sum + m)%n+n)%n;
+    	ans += umap[sum];
+    	umap[sum]++;
+    }
+    cout << ans << '\n';
+    return 0;
+ 
+}
