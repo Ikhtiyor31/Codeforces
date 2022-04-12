@@ -12,6 +12,7 @@ void dfs(int row, int col) {
 	dfs(row - 1, col);
 	dfs(row, col + 1);
 	dfs(row, col - 1);
+	
 }
 int main()
 {  
